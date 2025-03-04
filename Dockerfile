@@ -11,8 +11,12 @@ COPY *.json .
 
 RUN npm ci && ng build
 
-FROM caddy:latest
+FROM caddy:2-alpine
 
 COPY --from=ng-build /src/dist/day32 /srv
+COPY Caddyfile .
 
-EXPOSE 80
+EXPOSE 8080
+
+SHELL [ "/bin/sh", "-c" ]
+ENTRYPOINT caddy run --config ./Caddyfile
