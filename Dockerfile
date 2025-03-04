@@ -14,7 +14,7 @@ RUN npm ci && ng build
 FROM caddy:2-alpine
 
 COPY --from=ng-build /src/dist/day32 /srv
-COPY Caddyfile /etc/caddy/Caddyfile
+COPY Caddyfile ./Caddyfile
 
 ENV PORT=8080
 EXPOSE 8080
