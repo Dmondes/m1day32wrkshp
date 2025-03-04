@@ -3,7 +3,7 @@
     format console
   }
 
-  root * /srv
+  root * /srv/browser  # <--- Change this line from 'root * /srv' to 'root * /srv/browser'
   try_files {path} {path}/index.html =404
   file_server
 
