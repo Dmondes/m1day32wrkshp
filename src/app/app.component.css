@@ -1,0 +1,8 @@
+.all{
+    border: 1px solid black;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left:20%;
+}

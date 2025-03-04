@@ -1,0 +1,33 @@
+<div>
+    <h2>ToDo</h2>
+    <form [formGroup] = "form" (ngSubmit)="processform()" >
+        <div>
+            <label for="description">Description: </label>
+            <input type="text" id="description" formControlName="description">
+            @if (form.get("description")?.errors?.['required'] && form.get("description")?.touched ) {
+                <div>Is Empty</div>
+            }
+            @if (form.get("description")?.errors?.['minlength']) {
+                <div>length less than 5</div>
+            }
+        </div>
+        <div>
+            <label for="priority">Priority: </label>
+            High<input type="radio" name="priority" id="High" formControlName="priority" value="High">
+            Medium<input type="radio" name="priority" id="Medium" formControlName="priority" value="Medium">
+            Low<input type="radio" name="priority" id="Low" formControlName="priority" value="Low">
+        </div>
+        <div>
+            <label for="dueDate">Due: </label>
+            <input type="date" id="dueDate" formControlName="dueDate">
+            @if (form.get('dueDate')?.errors?.['required']) {
+                <div>Required date</div>
+            }
+            @if (form.get('dueDate')?.errors?.['pastDate']) {
+                <div>Date is past</div>
+            }
+        </div>
+        <button type="submit" [disabled]="form.invalid">Add</button>
+    </form>
+</div>
+

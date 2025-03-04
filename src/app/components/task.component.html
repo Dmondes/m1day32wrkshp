@@ -1,0 +1,22 @@
+<div class="tasklist">
+  <h1>Task</h1>
+  <div>
+    @for (item of appTasks; track $index) {
+    <div class="item">
+      <div>
+        {{ item.description }}
+      </div>
+      <div>
+        {{ item.priority }}
+      </div>
+      <div>
+        {{ item.dueDate | date : "MMM d" }}
+      </div>
+      <div>
+        <label for="complete">marked</label>
+        <input type="checkbox" id="complete">
+      </div>
+    </div>
+    }
+  </div>
+</div>

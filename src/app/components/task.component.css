@@ -1,0 +1,15 @@
+h1{
+    color:orangered;
+    margin-right: 60%;
+}
+
+.tasklist{
+    border: 1px solid black;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.item{
+    border: 1px solid black;
+    text-align: center;
+}
